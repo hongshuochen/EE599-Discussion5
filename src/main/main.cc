@@ -24,7 +24,7 @@ public:
 
   Rational& operator--();
   Rational operator--(int dummy);
-  Rational operator/(int s) const;
+  Rational& operator/=(const int s);
   bool operator==(const Rational &secondRational) const;
 };
 
@@ -128,13 +128,15 @@ bool Rational::operator==(const Rational &secondRational) const
 
 }
 
-Rational Rational::operator/(int s) const
+Rational& Rational::operator/=(const int s)
 {
 
 }
 int main() {
   Rational r1(4, 2);
   Rational r2(2, 3);
+  cout << "r1 is " << r1.toString() << endl;
+  cout << "r2 is " << r2.toString() << endl;
   cout << "r1 < r2 is " << (r1.operator<(r2) ? "true" : "false");
   cout << "\nr1 < r2 is " << ((r1 < r2) ? "true" : "false");
   cout << "\nr2 < r1 is " << (r2.operator<(r1) ? "true" : "false");
